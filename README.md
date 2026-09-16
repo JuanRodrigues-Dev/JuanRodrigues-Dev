@@ -54,11 +54,12 @@ Sou **Juan**, estudante de **Análise e Desenvolvimento de Sistemas** no IFPB, C
 
 <div align="center">
 
-<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/radar-langs.svg" alt="radar de linguagens" width="480" />
+<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/radar-langs.svg" alt="radar de linguagens" width="440" />
+<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/radar-skills.svg" alt="radar de skills" width="440" />
 
 </div>
 
-*Gerado automaticamente a partir dos meus repositórios públicos — atualiza todo dia sozinho via GitHub Actions.*
+*O radar azul (linguagens) é gerado automaticamente a partir dos meus repositórios públicos e atualiza sozinho todo dia. O radar roxo (skills) é uma autoavaliação minha, editada à mão em `scripts/generate-metrics.mjs`.*
 
 ---
 

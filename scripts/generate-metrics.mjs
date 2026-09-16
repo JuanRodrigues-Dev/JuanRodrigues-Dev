@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 /**
- * Gera os SVGs de estatísticas e de radar de linguagens usados no README
- * do perfil, com dados públicos vindos da GitHub GraphQL API.
+ * Gera os SVGs de estatísticas, radar de linguagens e radar de skills
+ * usados no README do perfil.
+ *
+ * As estatísticas e o radar de linguagens vêm de dados públicos reais
+ * da GitHub GraphQL API. O radar de skills é curado à mão (ver a
+ * constante SKILLS abaixo) — edite os valores conforme sua própria
+ * autoavaliação.
  *
  * Variáveis de ambiente esperadas:
  *   GITHUB_TOKEN  - token de acesso (o próprio GITHUB_TOKEN do Actions serve)
@@ -10,6 +15,7 @@
  * Saída:
  *   assets/stats-card.svg
  *   assets/radar-langs.svg
+ *   assets/radar-skills.svg
  */
 
 import { writeFile, mkdir } from "node:fs/promises";
@@ -92,9 +98,21 @@ const THEME = {
   text: "#c9d1d9",
   subtext: "#8b949e",
   accent: "#a9bef3",
+  accent2: "#d3a9f3",
   grid: "#30363d",
   font: "'JetBrains Mono', 'Fira Code', monospace",
 };
+
+// Radar de skills — curado à mão, NÃO vem de dados automáticos.
+// Ajuste os valores (0-100) para refletir sua autoavaliação real;
+// isso é atualizado por você, não pelo workflow.
+const SKILLS = [
+  { label: "Frontend", value: 75 },
+  { label: "Backend", value: 70 },
+  { label: "Banco de Dados", value: 65 },
+  { label: "Python/Dados", value: 50 },
+  { label: "Git/Ferramentas", value: 70 },
+];
 
 function escapeXml(value) {
   return String(value).replace(/[<>&'"]/g, (c) => ({
@@ -133,26 +151,29 @@ function statsCardSvg(stats) {
     .join("");
 
   return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Estatísticas do GitHub">
+  <defs>
+    <linearGradient id="topbar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="${THEME.accent}"/>
+      <stop offset="100%" stop-color="${THEME.accent2}"/>
+    </linearGradient>
+  </defs>
   <rect x="0.5" y="0.5" rx="12" width="${width - 1}" height="${height - 1}" fill="${THEME.card}" stroke="${THEME.border}"/>
-  <text x="28" y="38" fill="${THEME.text}" font-size="18" font-family="${THEME.font}" font-weight="700">${escapeXml(stats.name)} · estatísticas</text>
-  <line x1="28" y1="50" x2="${width - 28}" y2="50" stroke="${THEME.border}"/>
+  <rect x="0.5" y="0.5" rx="12" width="${width - 1}" height="4" fill="url(#topbar)"/>
+  <text x="28" y="42" fill="${THEME.text}" font-size="18" font-family="${THEME.font}" font-weight="700">${escapeXml(stats.name)} · estatísticas</text>
+  <line x1="28" y1="54" x2="${width - 28}" y2="54" stroke="${THEME.border}"/>
   ${rowsSvg}
 </svg>`;
 }
 
-// ---------------- Radar de linguagens ----------------
+// ---------------- Radar genérico ----------------
 
-function radarLangsSvg(languages) {
-  const top = languages.slice(0, 6);
-  const total = top.reduce((sum, l) => sum + l.size, 0) || 1;
-  const maxShare = Math.max(...top.map((l) => l.size / total));
-  const n = Math.max(top.length, 3);
-
-  const width = 580;
+function radarChartSvg(entries, accent) {
+  const n = Math.max(entries.length, 3);
+  const width = 640;
   const height = 440;
   const centerX = width / 2;
   const centerY = height / 2;
-  const radius = 130;
+  const radius = 120;
 
   function angleOf(i) {
     return (Math.PI * 2 * i) / n - Math.PI / 2;
@@ -173,37 +194,52 @@ function radarLangsSvg(languages) {
 
   const rings = [0.25, 0.5, 0.75, 1]
     .map((f) => {
-      const pts = top.map((_, i) => point(i, f).join(",")).join(" ");
+      const pts = entries.map((_, i) => point(i, f).join(",")).join(" ");
       return `<polygon points="${pts}" fill="none" stroke="${THEME.grid}" stroke-width="1"/>`;
     })
     .join("\n  ");
 
-  const spokes = top
+  const spokes = entries
     .map((_, i) => {
       const [x, y] = point(i, 1);
       return `<line x1="${centerX}" y1="${centerY}" x2="${x}" y2="${y}" stroke="${THEME.grid}" stroke-width="1"/>`;
     })
     .join("\n  ");
 
-  const dataPts = top
-    .map((l, i) => point(i, l.size / total / maxShare).join(","))
+  const dataPts = entries
+    .map((e, i) => point(i, Math.max(0, Math.min(1, e.value / 100))).join(","))
     .join(" ");
 
-  const labels = top
-    .map((l, i) => {
+  const labels = entries
+    .map((e, i) => {
       const [x, y] = point(i, 1.35);
-      const pct = ((l.size / total) * 100).toFixed(1);
-      return `<text x="${x}" y="${y}" fill="${THEME.text}" font-size="13" font-family="${THEME.font}" text-anchor="${anchorFor(i)}">${escapeXml(l.name)} ${pct}%</text>`;
+      const text = e.display ? `${e.label} ${e.display}` : e.label;
+      return `<text x="${x}" y="${y}" fill="${THEME.text}" font-size="13" font-family="${THEME.font}" text-anchor="${anchorFor(i)}">${escapeXml(text)}</text>`;
     })
     .join("\n  ");
 
-  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Radar de linguagens mais usadas">
+  return `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gráfico radar">
   <rect width="${width}" height="${height}" fill="${THEME.bg}"/>
   ${rings}
   ${spokes}
-  <polygon points="${dataPts}" fill="${THEME.accent}" fill-opacity="0.35" stroke="${THEME.accent}" stroke-width="2"/>
+  <polygon points="${dataPts}" fill="${accent}" fill-opacity="0.35" stroke="${accent}" stroke-width="2"/>
   ${labels}
 </svg>`;
+}
+
+function buildLanguageEntries(languages) {
+  const top = languages.slice(0, 6);
+  const total = top.reduce((sum, l) => sum + l.size, 0) || 1;
+  const maxShare = Math.max(...top.map((l) => l.size / total));
+  return top.map((l) => ({
+    label: l.name,
+    value: (l.size / total / maxShare) * 100,
+    display: `${((l.size / total) * 100).toFixed(1)}%`,
+  }));
+}
+
+function buildSkillEntries() {
+  return SKILLS.map((s) => ({ label: s.label, value: s.value, display: `${s.value}%` }));
 }
 
 // ---------------- Execução ----------------
@@ -226,7 +262,8 @@ async function main() {
 
   await mkdir("assets", { recursive: true });
   await writeFile("assets/stats-card.svg", statsCardSvg(stats));
-  await writeFile("assets/radar-langs.svg", radarLangsSvg(languages));
+  await writeFile("assets/radar-langs.svg", radarChartSvg(buildLanguageEntries(languages), THEME.accent));
+  await writeFile("assets/radar-skills.svg", radarChartSvg(buildSkillEntries(), THEME.accent2));
 
   console.log("SVGs gerados com sucesso.");
   console.log(stats);
