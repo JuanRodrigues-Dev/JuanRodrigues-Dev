@@ -1,14 +1,14 @@
 <div align="center">
 
-# 👋 Olá, eu sou Juan Rodrigues
-
-### `Estudante de ADS` • `Desenvolvimento de Software` • `Dados`
-
-<br>
-
 <a href="https://github.com/JuanRodrigues-Dev">
-  <img src="https://img.shields.io/badge/GitHub-JuanRodrigues--Dev-181717?style=for-the-badge&logo=github&logoColor=white">
+  <img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=A9BEF3&center=true&vCenter=true&width=880&lines=Ol%C3%A1%2C+eu+sou+Juan+Rodrigues;Estudante+de+An%C3%A1lise+e+Desenvolvimento+de+Sistemas;Desenvolvimento+de+Software+%2B+Dados;Aprendendo+construindo+projetos+reais" alt="typing banner" />
 </a>
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JuanRodrigues-Dev)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](#)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](#)
+
+![profile views](https://komarev.com/ghpvc/?username=JuanRodrigues-Dev&style=flat&color=a9bef3&label=visualiza%C3%A7%C3%B5es+do+perfil)
 
 </div>
 
@@ -16,72 +16,61 @@
 
 ## 👨‍💻 Sobre mim
 
-🎓 Sou estudante de **Análise e Desenvolvimento de Sistemas**, atualmente
-construindo minha formação na área de tecnologia.
+Sou **Juan**, estudante de **Análise e Desenvolvimento de Sistemas** no IFPB, Campus Cajazeiras 🇧🇷.
 
-Tenho interesse em duas áreas que considero complementares:
-
-- 💻 **Desenvolvimento de Software**
-- 📊 **Dados e Análise de Dados**
-
-Gosto de aprender através da prática, desenvolvendo projetos e buscando
-entender não apenas como uma tecnologia funciona, mas também como ela
-pode ser utilizada para resolver problemas reais.
-
-Atualmente estou aprimorando meus conhecimentos em **Java, JavaScript,
-Python, SQL, bancos de dados e ferramentas de análise de dados**.
+- 🎓 Construindo minha formação em tecnologia, com foco em **desenvolvimento de software** e **dados**.
+- 🛠️ A maioria dos meus projetos começa em disciplina da faculdade, mas eu levo além do acadêmico: autenticação de verdade, papéis de usuário, pensando em deploy real — não só "fazer funcionar".
+- 🌱 Já entreguei sistemas full-stack completos: gestão agrícola, chamados técnicos, controle de estoque/financeiro e pedidos de lanchonete.
+- 💬 Fale comigo sobre **sistemas full-stack**, **modelagem de banco de dados** ou **projetos acadêmicos que viram produto de verdade**.
 
 ---
 
-## 🛠️ Tecnologias
+## 🚀 Projetos em destaque
 
-### 💻 Desenvolvimento
+<div align="center">
 
-<p>
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
-  <img src="https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=black">
-</p>
+| Projeto | Descrição | Stack |
+|---|---|---|
+| 🌱 **SemeIA** | Plataforma de gestão agrícola | Node • Express • MongoDB • React |
+| 🎫 **Sistema de Chamados CTI** | Sistema de chamados para deploy real no IFPB | React • TS • Prisma • SQLite |
+| 📋 **BaseControl** | Kanban, financeiro, estoque e dashboard | React • localStorage |
+| 🍔 **Sistema Lanchonete** | Pedidos, cardápio e entrega com painéis por papel | React • TS • Node • Prisma |
 
-### 📊 Dados
+</div>
 
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=databricks&logoColor=white">
-  <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black">
-  <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white">
-</p>
-
-### 🗄️ Banco de Dados
-
-<p>
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
-</p>
-
-### 🔧 Ferramentas
-
-<p>
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
-  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
-</p>
+> 💡 Troque os nomes acima por links dos repositórios reais assim que estiverem publicados.
 
 ---
 
-## 📚 Atualmente estudando
+## 🛠️ Minha stack
 
-```text
-┌─────────────────────────────────────────────┐
-│                                             │
-│  💻 Desenvolvimento de Software             │
-│     Java • JavaScript • Node.js             │
-│                                             │
-│  📊 Dados                                    │
-│     Python • SQL • Power BI                  │
-│                                             │
-│  🗄️ Fundamentos                              │
-│     Banco de Dados • POO • Estruturas       │
-│     de Dados • Git                           │
-│                                             │
-└─────────────────────────────────────────────┘
+<div align="center">
+<img src="https://skillicons.dev/icons?i=java,js,ts,react,nodejs,python,mysql,postgres,mongodb,sqlite,git,github,vscode,docker&perline=7" alt="tech stack" />
+</div>
+
+---
+
+## 📡 Sinais
+
+<div align="center">
+
+<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/radar-langs.svg" alt="radar de linguagens" width="440" />
+<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/radar-skills.svg" alt="radar de skills" width="440" />
+
+</div>
+
+*O radar azul (linguagens) é gerado automaticamente a partir dos meus repositórios públicos e atualiza sozinho todo dia. O radar roxo (skills) é uma autoavaliação minha, editada à mão em `scripts/generate-metrics.mjs`.*
+
+---
+
+## 📈 Estatísticas
+
+<div align="center">
+
+<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/stats-card.svg" alt="estatísticas do GitHub" width="420" />
+
+</div>
+
+---
+
+<p align="center"><i>Feito com 💻 e ☕ por Juan Rodrigues</i></p>
