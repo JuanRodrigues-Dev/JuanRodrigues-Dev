@@ -1,11 +1,11 @@
 <div align="center">
 
 <a href="https://github.com/JuanRodrigues-Dev">
-  <img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=A9BEF3&center=true&vCenter=true&width=880&lines=Ol%C3%A1%2C+eu+sou+Juan+Rodrigues;Estudante+de+An%C3%A1lise+e+Desenvolvimento+de+Sistemas;Desenvolvimento+de+Software+%2B+Dados;Aprendendo+construindo+projetos+reais" alt="typing banner" />
+  <img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/banner.svg" alt="banner do perfil" width="900" />
 </a>
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JuanRodrigues-Dev)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juanrgomes)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juangomes)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:juanjrg1427@gmail.com)
 
 ![profile views](https://komarev.com/ghpvc/?username=JuanRodrigues-Dev&style=flat&color=a9bef3&label=visualiza%C3%A7%C3%B5es+do+perfil)
