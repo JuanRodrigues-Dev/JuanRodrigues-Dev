@@ -1,0 +1,38 @@
+name: Atualizar métricas do perfil
+
+on:
+  schedule:
+    # todo dia às 06:00 UTC (~03:00 em Cajazeiras, horário de Brasília)
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Gerar SVGs de estatísticas e radar de linguagens
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: JuanRodrigues-Dev
+        run: node scripts/generate-metrics.mjs
+
+      - name: Commitar mudanças (se houver)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/stats-card.svg assets/radar-langs.svg
+          git diff --cached --quiet || git commit -m "chore: atualizar métricas do perfil [skip ci]"
+          git push

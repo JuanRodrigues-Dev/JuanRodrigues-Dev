@@ -1,86 +1,75 @@
 <div align="center">
 
-# Juan Rodrigues
+<a href="https://github.com/JuanRodrigues-Dev">
+  <img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=A9BEF3&center=true&vCenter=true&width=880&lines=Ol%C3%A1%2C+eu+sou+Juan+Rodrigues;Estudante+de+An%C3%A1lise+e+Desenvolvimento+de+Sistemas;Desenvolvimento+de+Software+%2B+Dados;Aprendendo+construindo+projetos+reais" alt="typing banner" />
+</a>
 
-**Estudante de Análise e Desenvolvimento de Sistemas**  
-Desenvolvimento de Software · Dados
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JuanRodrigues-Dev)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](#)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](#)
 
-*Aprendendo, construindo e evoluindo um projeto de cada vez.*
+![profile views](https://komarev.com/ghpvc/?username=JuanRodrigues-Dev&style=flat&color=a9bef3&label=visualiza%C3%A7%C3%B5es+do+perfil)
 
 </div>
 
 ---
 
-## This is me :)
+## 👨‍💻 Sobre mim
 
-Olá! Sou estudante de **Análise e Desenvolvimento de Sistemas no IFPB – Campus Cajazeiras** e Técnico em Administração.
+Sou **Juan**, estudante de **Análise e Desenvolvimento de Sistemas** no IFPB, Campus Cajazeiras 🇧🇷.
 
-Estou construindo minha jornada na tecnologia com foco em **Desenvolvimento de Software**. Gosto de aprender criando projetos e também tenho interesse em **Dados**, especialmente em como transformar informações em soluções úteis.
-
-- 🎓 Análise e Desenvolvimento de Sistemas — IFPB
-- 💻 Estudando programação e desenvolvimento de aplicações
-- 📊 Interesse complementar em análise de dados
-- 🌱 Sempre aprendendo e colocando conhecimentos em prática
+- 🎓 Construindo minha formação em tecnologia, com foco em **desenvolvimento de software** e **dados**.
+- 🛠️ A maioria dos meus projetos começa em disciplina da faculdade, mas eu levo além do acadêmico: autenticação de verdade, papéis de usuário, pensando em deploy real — não só "fazer funcionar".
+- 🌱 Já entreguei sistemas full-stack completos: gestão agrícola, chamados técnicos, controle de estoque/financeiro e pedidos de lanchonete.
+- 💬 Fale comigo sobre **sistemas full-stack**, **modelagem de banco de dados** ou **projetos acadêmicos que viram produto de verdade**.
 
 ---
 
-## My current focus
-
-Atualmente, estou direcionando meus estudos para:
-
-- **Java e Programação Orientada a Objetos**
-- **JavaScript e desenvolvimento backend**
-- **SQL e bancos de dados**
-- **Git e GitHub**, para organizar e versionar meus projetos
-
----
-
-## My toolbox
-
-**Desenvolvimento**
-
-`Java` · `JavaScript` · `Node.js` · `C`
-
-**Dados**
-
-`Python` · `SQL` · `MySQL` · `Power BI` · `Excel`
-
-**Ferramentas**
-
-`Git` · `GitHub` · `VS Code`
-
----
-
-## Projects
-
-### 📚 Trilha de Estudos Java
-
-Repositório com exercícios e atividades que acompanham minha evolução nos estudos de Java.
-
-[**Acessar repositório →**](https://github.com/JuanRodrigues-Dev/Trilha_Estudos_Java)
-
-<!--
-Adicione outros projetos copiando este modelo:
-
-### Nome do projeto
-Uma breve descrição do que o projeto faz e do que você praticou.
-[**Acessar repositório →**](https://github.com/JuanRodrigues-Dev/NOME-DO-REPOSITORIO)
--->
-
----
-
-## Connect with me
-
-[GitHub](https://github.com/JuanRodrigues-Dev)
-
-<!--
-Adicione seu LinkedIn ou e-mail profissional quando quiser.
--->
-
----
+## 🚀 Projetos em destaque
 
 <div align="center">
 
-*Um passo de cada vez, transformando aprendizado em projetos.*
+| Projeto | Descrição | Stack |
+|---|---|---|
+| 🌱 **SemeIA** | Plataforma de gestão agrícola | Node • Express • MongoDB • React |
+| 🎫 **Sistema de Chamados CTI** | Sistema de chamados para deploy real no IFPB | React • TS • Prisma • SQLite |
+| 📋 **BaseControl** | Kanban, financeiro, estoque e dashboard | React • localStorage |
+| 🍔 **Sistema Lanchonete** | Pedidos, cardápio e entrega com painéis por papel | React • TS • Node • Prisma |
 
 </div>
+
+> 💡 Troque os nomes acima por links dos repositórios reais assim que estiverem publicados.
+
+---
+
+## 🛠️ Minha stack
+
+<div align="center">
+<img src="https://skillicons.dev/icons?i=java,js,ts,react,nodejs,python,mysql,postgres,mongodb,sqlite,git,github,vscode,docker&perline=7" alt="tech stack" />
+</div>
+
+---
+
+## 📡 Sinais
+
+<div align="center">
+
+<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/radar-langs.svg" alt="radar de linguagens" width="480" />
+
+</div>
+
+*Gerado automaticamente a partir dos meus repositórios públicos — atualiza todo dia sozinho via GitHub Actions.*
+
+---
+
+## 📈 Estatísticas
+
+<div align="center">
+
+<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/stats-card.svg" alt="estatísticas do GitHub" width="420" />
+
+</div>
+
+---
+
+<p align="center"><i>Feito com 💻 e ☕ por Juan Rodrigues</i></p>
