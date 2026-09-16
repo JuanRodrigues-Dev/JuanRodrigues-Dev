@@ -5,7 +5,7 @@
 </a>
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JuanRodrigues-Dev)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/juanrgomes)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juanrgomes)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:juanjrg1427@gmail.com)
 
 ![profile views](https://komarev.com/ghpvc/?username=JuanRodrigues-Dev&style=flat&color=a9bef3&label=visualiza%C3%A7%C3%B5es+do+perfil)
