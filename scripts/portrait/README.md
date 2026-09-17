@@ -32,3 +32,15 @@ sua — só faz sentido regenerar quando você trocar a imagem ou os campos de
 texto. Já as métricas em `assets/stats-card.svg`, `radar-langs.svg` e
 `radar-skills.svg` continuam sendo atualizadas automaticamente todo dia
 pelo workflow em `.github/workflows/update-metrics.yml`.
+
+## Se a imagem não atualizar depois de um novo commit
+
+O GitHub serve imagens do README através de um proxy (`camo`) que faz
+cache **por URL exata**. Como o caminho `assets/banner.svg` não muda a cada
+commit, é possível que ele continue mostrando a versão antiga por um
+tempo, mesmo depois do seu push ter dado certo.
+
+Solução: no `README.md`, a URL do banner termina com `?v=3`. Toda vez que
+você atualizar `assets/banner.svg` (nova foto, nova animação, etc.),
+aumente esse número (`?v=4`, `?v=5`, ...). Isso muda a URL aos olhos do
+proxy e força ele a buscar o arquivo de novo.

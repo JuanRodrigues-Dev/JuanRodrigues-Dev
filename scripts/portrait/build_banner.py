@@ -67,6 +67,9 @@ def build_dot_points():
     return xs, ys, work_res
 
 
+STYLE_RULES = []  # acumula regras @keyframes / classes CSS coletadas durante a montagem
+
+
 def portrait_group(xs, ys, work_res, box_x, box_y, box_w, box_h):
     scale = min(box_w, box_h) / work_res
     offset_x = box_x + (box_w - work_res * scale) / 2
@@ -82,10 +85,6 @@ def portrait_group(xs, ys, work_res, box_x, box_y, box_w, box_h):
     n_groups = 22
     group_ids = rng.integers(0, n_groups, size=n)
 
-    KEYTIMES = "0;0.2;0.3;0.4;0.5;0.7;0.8;0.9;1"
-    DUR = "14.2s"
-    BEGIN = "1.2s"
-
     groups_svg = []
     for g in range(n_groups):
         mask = group_ids == g
@@ -93,17 +92,19 @@ def portrait_group(xs, ys, work_res, box_x, box_y, box_w, box_h):
             continue
         dx = round(rng.uniform(-6, 6), 1)
         dy = round(rng.uniform(-10, 4), 1)
+        cls = f"pg{g}"
+        STYLE_RULES.append(
+            f"@keyframes k{cls}{{0%,20%{{transform:translate(0,0)}}"
+            f"30%,40%{{transform:translate({dx}px,{dy}px)}}"
+            f"50%,100%{{transform:translate(0,0)}}}}"
+            f".{cls}{{animation:k{cls} 14.2s ease-in-out infinite;animation-delay:1.2s;}}"
+        )
         circles = []
         for x, y, r, o in zip(xs[mask], ys[mask], radii[mask], opac[mask]):
             cx = round(offset_x + x * scale, 2)
             cy = round(offset_y + y * scale, 2)
             circles.append(f'<circle cx="{cx}" cy="{cy}" r="{round(r,2)}" fill="{THEME["dot"]}" fill-opacity="{round(o,2)}"/>')
-        groups_svg.append(
-            f'<g>{"".join(circles)}'
-            f'<animateTransform attributeName="transform" type="translate" begin="{BEGIN}" dur="{DUR}" '
-            f'repeatCount="indefinite" calcMode="linear" keyTimes="{KEYTIMES}" '
-            f'values="0 0;0 0;{dx} {dy};{dx} {dy};0 0;0 0;0 0;0 0;0 0"/></g>'
-        )
+        groups_svg.append(f'<g class="{cls}">{"".join(circles)}</g>')
     return "".join(groups_svg)
 
 
@@ -111,29 +112,25 @@ def traveler_dots(box_x, box_y, box_w, box_h, count=26, seed=99):
     """Pequenas partículas que atravessam o retrato piscando, dando uma
     sensação de 'sinal ao vivo' durante a janela de animação."""
     rng = np.random.default_rng(seed)
-    KEYTIMES = "0;0.2;0.3;0.4;0.5;0.7;0.8;0.9;1"
-    DUR = "14.2s"
-    BEGIN = "1.2s"
     parts = []
-    for _ in range(count):
-        x0 = rng.uniform(box_x + 10, box_x + box_w - 10)
-        y0 = rng.uniform(box_y + 10, box_y + box_h - 10)
-        x1 = x0 + rng.uniform(-24, 24)
-        y1 = y0 + rng.uniform(-30, 10)
-        parts.append(
-            f'<circle cx="0" cy="0" r="1.1" fill="{THEME["dot"]}">'
-            f'<animateTransform attributeName="transform" type="translate" begin="{BEGIN}" dur="{DUR}" '
-            f'repeatCount="indefinite" calcMode="linear" keyTimes="{KEYTIMES}" '
-            f'values="{x0:.1f} {y0:.1f};{x0:.1f} {y0:.1f};{x1:.1f} {y1:.1f};{x1:.1f} {y1:.1f};'
-            f'{x0:.1f} {y0:.1f};{x0:.1f} {y0:.1f};{x0:.1f} {y0:.1f};{x0:.1f} {y0:.1f};{x0:.1f} {y0:.1f}"/>'
-            f'<animate attributeName="opacity" begin="{BEGIN}" dur="{DUR}" repeatCount="indefinite" '
-            f'keyTimes="{KEYTIMES}" values="0;0;1;1;1;1;0;0;0"/>'
-            f'</circle>'
+    for i in range(count):
+        x0 = round(rng.uniform(box_x + 10, box_x + box_w - 10), 1)
+        y0 = round(rng.uniform(box_y + 10, box_y + box_h - 10), 1)
+        dx = round(rng.uniform(-24, 24), 1)
+        dy = round(rng.uniform(-30, 10), 1)
+        cls = f"tv{i}"
+        STYLE_RULES.append(
+            f"@keyframes k{cls}{{0%,20%{{transform:translate(0,0);opacity:0}}"
+            f"30%,50%{{transform:translate({dx}px,{dy}px);opacity:1}}"
+            f"60%,100%{{transform:translate({dx}px,{dy}px);opacity:0}}}}"
+            f".{cls}{{animation:k{cls} 14.2s ease-in-out infinite;animation-delay:1.2s;}}"
         )
+        parts.append(f'<circle class="{cls}" cx="{x0}" cy="{y0}" r="1.1" fill="{THEME["dot"]}"/>')
     return "".join(parts)
 
 
 def build_svg():
+    STYLE_RULES.clear()
     xs, ys, work_res = build_dot_points()
 
     W, H = 900, 500
@@ -174,7 +171,19 @@ def build_svg():
     live_text_x = pill_x - 14
     dot_cx = live_text_x - live_font_w - 10
 
+    STYLE_RULES.append(
+        "@keyframes kcursor{0%,49%{opacity:1}50%,100%{opacity:0}}"
+        ".cursor{animation:kcursor 1s steps(1,end) infinite;}"
+    )
+    STYLE_RULES.append(
+        "@keyframes klive{0%,40%{opacity:1}70%{opacity:.25}100%{opacity:1}}"
+        ".live-dot{animation:klive 1.6s ease-in-out infinite;}"
+    )
+
+    style_block = f"<style>{''.join(STYLE_RULES)}</style>"
+
     svg = f'''<svg width="{W}" height="{H}" viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Banner de perfil">
+  {style_block}
   <rect width="{W}" height="{H}" rx="14" fill="{THEME["bg"]}"/>
   <rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14" fill="none" stroke="{THEME["border"]}"/>
 
@@ -182,7 +191,7 @@ def build_svg():
   <circle cx="{pad+10}" cy="{pad+title_h/2}" r="5.5" fill="{THEME["red"]}"/>
   <circle cx="{pad+30}" cy="{pad+title_h/2}" r="5.5" fill="{THEME["yellow"]}"/>
   <circle cx="{pad+50}" cy="{pad+title_h/2}" r="5.5" fill="{THEME["green"]}"/>
-  <text x="{W/2}" y="{pad+title_h/2+4}" fill="{THEME["subtext"]}" font-size="13" font-family="{THEME["font"]}" text-anchor="middle">profile.sh --live<tspan fill="{THEME["accent"]}">▍<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.51;1" dur="1s" repeatCount="indefinite"/></tspan></text>
+  <text x="{W/2}" y="{pad+title_h/2+4}" fill="{THEME["subtext"]}" font-size="13" font-family="{THEME["font"]}" text-anchor="middle">profile.sh --live<tspan class="cursor" fill="{THEME["accent"]}">▍</tspan></text>
   <line x1="{pad}" y1="{pad+title_h}" x2="{W-pad}" y2="{pad+title_h}" stroke="{THEME["border"]}" stroke-width="1"/>
 
   <!-- painel esquerdo: retrato -->
@@ -198,9 +207,7 @@ def build_svg():
   <!-- painel direito: informações -->
   <rect x="{right_x}" y="{body_y}" width="{right_w}" height="{body_h}" rx="10" fill="{THEME["panel"]}" stroke="{THEME["border"]}"/>
   <text x="{right_x+22}" y="{body_y+28}" fill="{THEME["accent"]}" font-size="13" font-family="{THEME["font"]}" font-weight="700">SYSTEM.INFO</text>
-  <circle cx="{dot_cx}" cy="{body_y+24}" r="4" fill="{THEME["red"]}">
-    <animate attributeName="opacity" values="1;1;0.25;1" keyTimes="0;0.4;0.7;1" dur="1.6s" repeatCount="indefinite"/>
-  </circle>
+  <circle class="live-dot" cx="{dot_cx}" cy="{body_y+24}" r="4" fill="{THEME["red"]}"/>
   <text x="{live_text_x}" y="{body_y+28}" fill="{THEME["red"]}" font-size="11" font-family="{THEME["font"]}" font-weight="700" text-anchor="end">LIVE</text>
   <rect x="{pill_x}" y="{body_y+12}" width="{pill_w}" height="20" rx="10" fill="{THEME["border_soft"]}"/>
   <text x="{pill_x+pill_w/2}" y="{body_y+26}" fill="{THEME["value"]}" font-size="10.5" font-family="{THEME["font"]}" text-anchor="middle">{esc(USERNAME_PILL)}</text>
