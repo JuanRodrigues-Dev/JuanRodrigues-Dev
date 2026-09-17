@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://github.com/JuanRodrigues-Dev">
-  <img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/banner.svg" alt="banner do perfil" width="900" />
+  <img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/banner.svg?v=3" alt="banner do perfil" width="900" />
 </a>
 
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JuanRodrigues-Dev)
