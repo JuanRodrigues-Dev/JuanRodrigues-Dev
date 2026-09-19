@@ -1,76 +1,105 @@
 <div align="center">
 
+<!-- BANNER - terminal profile.sh --live -->
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/banner-dark.v9.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.v9.svg">
+  <img src="assets/banner-dark.v9.svg" width="100%" alt="profile.sh --live">
+</picture>
+
+<br>
+
+<!-- NOME / TAGLINE - digitação animada -->
 <a href="https://github.com/JuanRodrigues-Dev">
-  <img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/banner.svg?v=3" alt="banner do perfil" width="900" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=26&duration=2600&pause=900&color=AA9BEF&center=true&vCenter=true&width=880&lines=Juan+Rodrigues+Gomes;Desenvolvedor+Full-Stack+%26+Analista+de+Sistemas;JavaScript+%7C+TypeScript+%7C+React+%7C+Node.js;Construindo+o+futuro+atrav%C3%A9s+do+c%C3%B3digo" alt="typing banner">
 </a>
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/JuanRodrigues-Dev)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juangomes)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:juanjrg1427@gmail.com)
+<br>
 
-![profile views](https://komarev.com/ghpvc/?username=JuanRodrigues-Dev&style=flat&color=a9bef3&label=visualiza%C3%A7%C3%B5es+do+perfil)
+<!-- REDES SOCIAIS -->
+<a href="https://www.linkedin.com/in/juangomes"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>&nbsp;&nbsp;
+<a href="https://github.com/JuanRodrigues-Dev"><img src="https://img.shields.io/badge/GitHub-0d1117?style=for-the-badge&logo=github&logoColor=aa9bef" alt="GitHub"></a>
+
+<br>
+
+<img src="https://komarev.com/ghpvc/?username=JuanRodrigues-Dev&style=flat&color=aa9bef&label=profile+views" alt="profile views">
 
 </div>
 
 ---
 
-## 👨‍💻 Sobre mim
+## Olá, mundo! 👋
 
-Sou **Juan**, estudante de **Análise e Desenvolvimento de Sistemas** no IFPB, Campus Cajazeiras 🇧🇷.
+Sou o **Juan Rodrigues Gomes**, estudante de **Análise e Desenvolvimento de Sistemas no IFPB Campus Cajazeiras**, apaixonado por tecnologia, desenvolvimento de software e resolução de problemas por meio de código. 
 
-- 🎓 Construindo minha formação em tecnologia, com foco em **desenvolvimento de software** e **dados**.
-- 🛠️ A maioria dos meus projetos começa em disciplina da faculdade, mas eu levo além do acadêmico: autenticação de verdade, papéis de usuário, pensando em deploy real — não só "fazer funcionar".
-- 🌱 Já entreguei sistemas full-stack completos: gestão agrícola, chamados técnicos, controle de estoque/financeiro e pedidos de lanchonete.
-- 💬 Fale comigo sobre **sistemas full-stack**, **modelagem de banco de dados** ou **projetos acadêmicos que viram produto de verdade**.
+- 💻 **Foco atual:** Desenvolvimento Full-Stack com JavaScript, TypeScript, React, Next.js, Node.js e Java (Spring Boot).
+- 🗄️ **Banco de Dados:** Modelagem relacional e otimização de consultas SQL (PostgreSQL e MySQL).
+- ☁️ **Cloud & DevOps:** Estudos contínuos em arquitetura Cloud na AWS Academy e conteinerização com Docker.
+- 🌱 **Missão:** Evoluir constantemente como desenvolvedor, criando aplicações eficientes e focando em soluções escaláveis.
 
----
-
-## 🚀 Projetos em destaque
+<br>
 
 <div align="center">
 
-| Projeto | Descrição | Stack |
-|---|---|---|
-| 🌱 **SemeIA** | Plataforma de gestão agrícola | Node • Express • MongoDB • React |
-| 🎫 **Sistema de Chamados CTI** | Sistema de chamados para deploy real no IFPB | React • TS • Prisma • SQLite |
-| 📋 **BaseControl** | Kanban, financeiro, estoque e dashboard | React • localStorage |
-| 🍔 **Sistema Lanchonete** | Pedidos, cardápio e entrega com painéis por papel | React • TS • Node • Prisma |
+## Minha Stack Tecnológica
+
+<img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,java,spring,postgres,mysql,docker,aws,git,github,vscode&perline=7" alt="tech stack">
 
 </div>
 
-> 💡 Troque os nomes acima por links dos repositórios reais assim que estiverem publicados.
-
 ---
-
-## 🛠️ Minha stack
-
-<div align="center">
-<img src="https://skillicons.dev/icons?i=java,js,ts,react,nodejs,python,mysql,postgres,mongodb,sqlite,git,github,vscode,docker&perline=7" alt="tech stack" />
-</div>
-
----
-
-## 📡 Sinais
 
 <div align="center">
 
-<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/radar-langs.svg" alt="radar de linguagens" width="440" />
-<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/radar-skills.svg" alt="radar de skills" width="440" />
+## Sinais & Habilidades
+
+<table>
+<tr>
+<td width="50%" align="center" valign="middle">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/radar-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/radar-light.svg">
+  <img src="assets/radar-dark.svg" width="400" alt="skill radar chart">
+</picture>
+
+</td>
+<td width="50%" align="center" valign="middle">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/radar-langs-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/radar-langs-light.svg">
+  <img src="assets/radar-langs-dark.svg" width="400" alt="language radar chart">
+</picture>
+
+</td>
+</tr>
+</table>
 
 </div>
 
-*O radar azul (linguagens) é gerado automaticamente a partir dos meus repositórios públicos e atualiza sozinho todo dia. O radar roxo (skills) é uma autoavaliação minha, editada à mão em `scripts/generate-metrics.mjs`.*
-
 ---
-
-## 📈 Estatísticas
 
 <div align="center">
 
-<img src="https://github.com/JuanRodrigues-Dev/JuanRodrigues-Dev/raw/main/assets/stats-card.svg" alt="estatísticas do GitHub" width="420" />
+## Estatísticas
+
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/card-stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/card-stats-light.svg">
+  <img src="assets/card-stats-dark.svg" width="480" alt="GitHub statistics">
+</picture>
+
+<br>
+
+<img src="assets/metrics.languages.svg" height="165" alt="most used languages">
 
 </div>
 
 ---
 
-<p align="center"><i>Feito com 💻 e ☕ por Juan Rodrigues</i></p>
+<div align="center">
+
+<sub>` Feito com dedicação · Juan Rodrigues Gomes `</sub>
+
+</div>
