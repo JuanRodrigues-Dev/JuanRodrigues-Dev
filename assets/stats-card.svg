@@ -13,9 +13,9 @@
     <text x="28" y="86" fill="#c9d1d9" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace">⭐ Total de estrelas</text>
     <text x="392" y="86" fill="#a9bef3" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace" text-anchor="end" font-weight="700">0</text>
     <text x="28" y="120" fill="#c9d1d9" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace">📦 Repositórios públicos</text>
-    <text x="392" y="120" fill="#a9bef3" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace" text-anchor="end" font-weight="700">16</text>
+    <text x="392" y="120" fill="#a9bef3" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace" text-anchor="end" font-weight="700">14</text>
     <text x="28" y="154" fill="#c9d1d9" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace">💾 Commits (último ano)</text>
-    <text x="392" y="154" fill="#a9bef3" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace" text-anchor="end" font-weight="700">249</text>
+    <text x="392" y="154" fill="#a9bef3" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace" text-anchor="end" font-weight="700">252</text>
     <text x="28" y="188" fill="#c9d1d9" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace">🔀 Pull requests</text>
     <text x="392" y="188" fill="#a9bef3" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace" text-anchor="end" font-weight="700">75</text>
     <text x="28" y="222" fill="#c9d1d9" font-size="14" font-family="'JetBrains Mono', 'Fira Code', monospace">🐛 Issues abertas</text>
